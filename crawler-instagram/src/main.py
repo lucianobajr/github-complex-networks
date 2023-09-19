@@ -1,46 +1,29 @@
-from selenium import webdriver
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
-import time
-
 from config.environments import USERNAME_INSTAGRAM, PASSWORD_INSTAGRAM
 
-browser = webdriver.Chrome("./resources/chromedriver")
+from core.driver_manager.driver_manager import DriverManager
+from core.builder.instagram_builder import InstagramBuilder
 
-browser.get("http://instagram.com")
+from constants.driver_constants import INSTAGRAM_URL,PATH_DRIVER
 
+def main():
+    driver_manager = DriverManager(driver_path=PATH_DRIVER)
+    driver_manager.open_website(INSTAGRAM_URL)
 
-username = WebDriverWait(browser, 10).until(
-    EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='username']")))
-password = WebDriverWait(browser, 10).until(
-    EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='password']")))
+    scrapper = (
+        InstagramBuilder()
+        .set_driver(driver_manager.driver)
+        .set_credentials(USERNAME_INSTAGRAM, PASSWORD_INSTAGRAM)
+        .build()
+    )
 
-username.send_keys(USERNAME_INSTAGRAM)
-password.send_keys(PASSWORD_INSTAGRAM)
+    scrapper.login()
+    scrapper.handle_notifications()
+    scrapper.turn_off_notifications()
 
-time.sleep(5)
-submit = WebDriverWait(browser, 10).until(
-    EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']")))
+    # Continue com o restante do seu código aqui
 
-submit.click()
+    # Feche o navegador quando terminar
+    driver_manager.close()
 
-time.sleep(5)
-try:
-    time.sleep(5)
-    button = browser.find_element(By.CSS_SELECTOR, "div.x1i10hfl")
-    button.click()
-except:
-    time.sleep(1)
-
-
-# Turn Notifications Off
-time.sleep(5)
-
-try:
-    button = browser.find_element(
-        By.CSS_SELECTOR, "button._a9--:nth-child(2)")
-    button.click()
-except:
-    time.sleep(1)
+if __name__ == "__main__":
+    main()
