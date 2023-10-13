@@ -1,7 +1,51 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Caches
+*.pyc
+
+# Output files
+*.pyz
+__pypackages__/
+
+# virtualenv
+venv/
+env/
+ENV/
+
+# pipenv
+Pipfile.lock
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# Visual Studio Code settings
+.vscode/
+
+# Sublime Text workspace files
+.sublime-workspace
+
+# SageMath parsed files
+.sage-sage/
+
+# Python Tools for Visual Studio (PTVS)
+__pycache__/
+Pycache/
+
+# Radon
+__pycache__/
+Pycache/
+
 *.exe
 *.exe~
 *.dll
@@ -13,11 +57,5 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
-
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-# Go workspace file
-go.work
 
 .env
