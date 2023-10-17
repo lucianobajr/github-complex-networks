@@ -60,3 +60,41 @@ Posteriormente, o segundo dataset foi criado com usuários aleatórios a partir 
 Isso permitiu expandir a base de dados e incluir perfis que podem não ser tão amplamente reconhecidos, mas que contribuem ativamente para a comunidade de desenvolvedores.
 
 Essa abordagem de criar um segundo dataset com base em usuários aleatórios é uma maneira eficaz de ampliar a amostra e diversificar as fontes de dados, o que pode enriquecer ainda mais suas análises e pesquisas na área de tecnologia e desenvolvimento. Além disso, garantir que esses novos usuários não estejam presentes no dataset primário ajuda a evitar duplicações e a manter a integridade dos dados coletados.
+
+# Dados Coletados dos Usuários
+
+
+| Campo                    | Descrição                                                              |
+|--------------------------|------------------------------------------------------------------------|
+| .login         | Nome de usuário no GitHub.                                             |
+| .id            | Identificação única do usuário no GitHub.                               |
+| .avatar_url    | URL da imagem de avatar do usuário.                                     |
+| .gravatar_id   | ID do Gravatar do usuário.                                             |
+| .url           | URL principal do perfil do usuário.                                    |
+| .html_url      | URL HTML do perfil do usuário.                                          |
+| .followers_url | URL para listar os seguidores do usuário.                               |
+| .following_url | URL para listar os usuários que o usuário segue.                       |
+| .gists_url     | URL para listar os Gists criados pelo usuário.                          |
+| .starred_url   | URL para listar os repositórios marcados como favoritos pelo usuário.   |
+| .subscriptions_url | URL para listar as assinaturas do usuário.                           |
+| .organizations_url | URL para listar as organizações às quais o usuário pertence.        |
+| .repos_url     | URL para listar os repositórios do usuário.                             |
+| .events_url    | URL para listar os eventos relacionados ao usuário.                     |
+| .received_events_url | URL para listar eventos recebidos pelo usuário.                    |
+| .type          | Tipo de conta (por exemplo, "User" para usuários comuns).              |
+| .site_admin    | Indica se o usuário é um administrador do site.                         |
+| .name          | Nome real do usuário.                                                  |
+| .company       | Empresa associada ao usuário (se aplicável).                           |
+| .blog          | Blog pessoal ou página da web do usuário (se aplicável).               |
+| .location      | Localização informada pelo usuário (se aplicável).                     |
+| .email         | Endereço de e-mail do usuário (se aplicável).                           |
+| .hireable      | Indica se o usuário está disponível para contratação.                  |
+| .bio           | Biografia ou descrição do usuário.                                     |
+| .public_repos  | Número de repositórios públicos do usuário.                            |
+| .public_gists  | Número de Gists públicos criados pelo usuário.                         |
+| len(followers_users)      | Quantidade de seguidores que o usuário possui.                         |
+| len(following_users)      | Quantidade de usuários que o usuário está seguindo.                    |
+| .created_at    | Data e hora de criação da conta do usuário.                             |
+| .updated_at    | Data e hora da última atualização do perfil do usuário.                |
+| ", ".join(following_users)  | Lista de nomes de usuários seguidos pelo usuário.                   |
+| ", ".join(followers_users)  | Lista de nomes de usuários que seguem o usuário.                     |
