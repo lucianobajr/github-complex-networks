@@ -1,4 +1,4 @@
-OPTION=1
+OPTION=3
 
 MAIN = src/main.py
 
