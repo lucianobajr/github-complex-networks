@@ -56,7 +56,7 @@ class UserGraphStatsData:
 
     def Boostrap(self):
         df = pd.read_csv(self.graph_dataset, encoding='utf-8')
-        csv_filename = "../resources/data/graph_users_with_stats.csv"
+        csv_filename = "../resources/data/subgraph_random_users_with_stats.csv"
         csv_manager = ManagerCSV(
             csv_filename, header=csv_header_users_graph_stats_data)
         csv_manager.write_header()

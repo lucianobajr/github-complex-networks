@@ -6,7 +6,7 @@ from core.useCases.initial_data import InitialData
 
 from config.environments import INITIAL_USER
 
-from constants.paths import graph_random_users
+from constants.paths import subgraph_random_users
 
 if __name__ == "__main__":
     
@@ -21,7 +21,7 @@ if __name__ == "__main__":
         random.Boostrap()
 
     elif option == 3:
-        userGraphStatsData = UserGraphStatsData(graph_dataset=graph_random_users)
+        userGraphStatsData = UserGraphStatsData(graph_dataset=subgraph_random_users)
         userGraphStatsData.Boostrap()
 
     else:
